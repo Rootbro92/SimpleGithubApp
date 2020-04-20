@@ -15,6 +15,7 @@
 		844626922448BD5D0091BA91 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844626912448BD5D0091BA91 /* Router.swift */; };
 		844626952448BF970091BA91 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844626942448BF970091BA91 /* UserListViewController.swift */; };
 		844626992448C0130091BA91 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844626982448C0130091BA91 /* UserModel.swift */; };
+		8446269D244E0EA40091BA91 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446269C244E0EA40091BA91 /* BaseViewController.swift */; };
 		96937A8AA1A4718E00E6C9C5 /* Pods_SimpleGithubApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851B42AAB9635F22FF9126E8 /* Pods_SimpleGithubApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		844626912448BD5D0091BA91 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		844626942448BF970091BA91 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		844626982448C0130091BA91 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		8446269C244E0EA40091BA91 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		851B42AAB9635F22FF9126E8 /* Pods_SimpleGithubApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleGithubApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C59252ABC83A3F41AF4E575D /* Pods-SimpleGithubApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleGithubApp.debug.xcconfig"; path = "Target Support Files/Pods-SimpleGithubApp/Pods-SimpleGithubApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				8446267A24472EE30091BA91 /* AppDelegate.swift */,
+				8446269A244E0E880091BA91 /* Core */,
 				844626972448C0020091BA91 /* Model */,
 				8446268E2448BD090091BA91 /* Service */,
 				844626932448BF450091BA91 /* View */,
@@ -119,6 +122,22 @@
 				844626982448C0130091BA91 /* UserModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8446269A244E0E880091BA91 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8446269B244E0E980091BA91 /* Base */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8446269B244E0E980091BA91 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8446269C244E0EA40091BA91 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		8FC7E2DAC8E580D31D80312C /* Frameworks */ = {
@@ -249,6 +268,7 @@
 				844626952448BF970091BA91 /* UserListViewController.swift in Sources */,
 				8446267B24472EE30091BA91 /* AppDelegate.swift in Sources */,
 				844626902448BD520091BA91 /* Network.swift in Sources */,
+				8446269D244E0EA40091BA91 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

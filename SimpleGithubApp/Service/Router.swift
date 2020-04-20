@@ -9,43 +9,38 @@
 import Foundation
 import Moya
 
-enum Idus {
-    case productList(page: Int)
-    case productDetail(id: Int)
+enum GitHub {
+    case userList(page: Int)
 }
 
-extension Idus: TargetType {
+extension GitHub: TargetType {
 
-    var baseURL: URL { return URL(string: "https://2jt4kq01ij.execute-api.ap-northeast-2.amazonaws.com/prod")! }
+    var baseURL: URL { return URL(string: "https://api.github.com")! }
     var path: String {
         switch self {
-        case .productList:
-            return "/products"
-        case .productDetail(let id):
-            return "/products/\(id)"
+        case .userList:
+            return "/users"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .productList, .productDetail:
+        case .userList:
             return .get
         }
     }
 
     var sampleData: Data {
         switch self {
-        case .productList, .productDetail:
+        case .userList:
             return "test data".data(using: .utf8)!
         }
     }
 
     var task: Task {
         switch self {
-        case .productList(let page):
+        case .userList(let page):
             return .requestParameters(parameters: ["page": page], encoding: URLEncoding.queryString)
-        case .productDetail(let id):
-            return .requestParameters(parameters: ["id": id], encoding: URLEncoding.queryString)
         }
     }
 

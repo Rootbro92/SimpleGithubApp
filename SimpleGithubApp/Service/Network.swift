@@ -27,13 +27,13 @@ class Network {
 
     static let shared = Network()
 
-    let provider = MoyaProvider<Idus>()
+    let provider = MoyaProvider<GitHub>()
 
     private init() {
 
     }
 
-    func request<T: Decodable>(target: Idus, decoder: T.Type, completion: @escaping (NetworkResponse) -> Void) {
+    func request<T: Decodable>(target: GitHub, decoder: T.Type, completion: @escaping (NetworkResponse) -> Void) {
         provider.request(target) { result in
             switch result {
             case .success(let response):
