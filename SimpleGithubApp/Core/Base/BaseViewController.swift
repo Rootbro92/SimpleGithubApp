@@ -10,4 +10,13 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    override func viewDidLoad() {
+      super.viewDidLoad()
+      setupUI()
+      setupConstraints()
+    }
+    
+    func setupUI() { }
+
+    func setupConstraints() { }
 }

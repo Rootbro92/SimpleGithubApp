@@ -16,6 +16,13 @@
 		844626952448BF970091BA91 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844626942448BF970091BA91 /* UserListViewController.swift */; };
 		844626992448C0130091BA91 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844626982448C0130091BA91 /* UserModel.swift */; };
 		8446269D244E0EA40091BA91 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446269C244E0EA40091BA91 /* BaseViewController.swift */; };
+		8446269F244F47070091BA91 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446269E244F47070091BA91 /* UserListCell.swift */; };
+		844626A2244F48B70091BA91 /* UserListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844626A1244F48B70091BA91 /* UserListCellViewModel.swift */; };
+		844626A4244F6CBC0091BA91 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844626A3244F6CBC0091BA91 /* BaseTableViewCell.swift */; };
+		844626A6244F6F3E0091BA91 /* UserListViewController+TableViewDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844626A5244F6F3E0091BA91 /* UserListViewController+TableViewDecorator.swift */; };
+		844626A8244F6FF60091BA91 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844626A7244F6FF60091BA91 /* UserListViewModel.swift */; };
+		844626AC2450927F0091BA91 /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844626AB2450927F0091BA91 /* UITableView+Dequeue.swift */; };
+		844626AE245092B10091BA91 /* UIView+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844626AD245092B10091BA91 /* UIView+ReuseIdentifier.swift */; };
 		96937A8AA1A4718E00E6C9C5 /* Pods_SimpleGithubApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851B42AAB9635F22FF9126E8 /* Pods_SimpleGithubApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +39,13 @@
 		844626942448BF970091BA91 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		844626982448C0130091BA91 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		8446269C244E0EA40091BA91 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		8446269E244F47070091BA91 /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
+		844626A1244F48B70091BA91 /* UserListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCellViewModel.swift; sourceTree = "<group>"; };
+		844626A3244F6CBC0091BA91 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		844626A5244F6F3E0091BA91 /* UserListViewController+TableViewDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserListViewController+TableViewDecorator.swift"; sourceTree = "<group>"; };
+		844626A7244F6FF60091BA91 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
+		844626AB2450927F0091BA91 /* UITableView+Dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeue.swift"; sourceTree = "<group>"; };
+		844626AD245092B10091BA91 /* UIView+ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ReuseIdentifier.swift"; sourceTree = "<group>"; };
 		851B42AAB9635F22FF9126E8 /* Pods_SimpleGithubApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleGithubApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C59252ABC83A3F41AF4E575D /* Pods-SimpleGithubApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleGithubApp.debug.xcconfig"; path = "Target Support Files/Pods-SimpleGithubApp/Pods-SimpleGithubApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +101,7 @@
 				8446268324472EE40091BA91 /* Assets.xcassets */,
 				8446268524472EE40091BA91 /* LaunchScreen.storyboard */,
 				8446268824472EE40091BA91 /* Info.plist */,
+				844626A9245092360091BA91 /* Utility */,
 			);
 			path = SimpleGithubApp;
 			sourceTree = "<group>";
@@ -112,6 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				844626942448BF970091BA91 /* UserListViewController.swift */,
+				844626A7244F6FF60091BA91 /* UserListViewModel.swift */,
+				844626A5244F6F3E0091BA91 /* UserListViewController+TableViewDecorator.swift */,
+				844626A0244F47130091BA91 /* Cell */,
 			);
 			path = UserList;
 			sourceTree = "<group>";
@@ -136,8 +154,35 @@
 			isa = PBXGroup;
 			children = (
 				8446269C244E0EA40091BA91 /* BaseViewController.swift */,
+				844626A3244F6CBC0091BA91 /* BaseTableViewCell.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		844626A0244F47130091BA91 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8446269E244F47070091BA91 /* UserListCell.swift */,
+				844626A1244F48B70091BA91 /* UserListCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		844626A9245092360091BA91 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				844626AA2450924D0091BA91 /* Extension */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		844626AA2450924D0091BA91 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				844626AB2450927F0091BA91 /* UITableView+Dequeue.swift */,
+				844626AD245092B10091BA91 /* UIView+ReuseIdentifier.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		8FC7E2DAC8E580D31D80312C /* Frameworks */ = {
@@ -263,10 +308,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8446269F244F47070091BA91 /* UserListCell.swift in Sources */,
+				844626AE245092B10091BA91 /* UIView+ReuseIdentifier.swift in Sources */,
+				844626A8244F6FF60091BA91 /* UserListViewModel.swift in Sources */,
+				844626A6244F6F3E0091BA91 /* UserListViewController+TableViewDecorator.swift in Sources */,
 				844626992448C0130091BA91 /* UserModel.swift in Sources */,
 				844626922448BD5D0091BA91 /* Router.swift in Sources */,
 				844626952448BF970091BA91 /* UserListViewController.swift in Sources */,
+				844626AC2450927F0091BA91 /* UITableView+Dequeue.swift in Sources */,
+				844626A4244F6CBC0091BA91 /* BaseTableViewCell.swift in Sources */,
 				8446267B24472EE30091BA91 /* AppDelegate.swift in Sources */,
+				844626A2244F48B70091BA91 /* UserListCellViewModel.swift in Sources */,
 				844626902448BD520091BA91 /* Network.swift in Sources */,
 				8446269D244E0EA40091BA91 /* BaseViewController.swift in Sources */,
 			);

@@ -48,6 +48,7 @@ class Network {
                     print("Decodable Error", error)
                     completion(NetworkResponse(json: nil, error: nil, result: .failure))
                 }
+                
             case .failure(let error):
                 completion(NetworkResponse(json: nil, error: .some(error), result: .failure))
             }

@@ -28,7 +28,8 @@ import Foundation
 //    "type": "User",
 //    "site_admin": false
 //}
-struct UserDataModel: Codable {
+
+struct User: Codable {
     var login: String
     var id: Int
     var nodeId: String

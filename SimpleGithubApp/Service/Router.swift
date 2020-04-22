@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 enum GitHub {
-    case userList(page: Int)
+    case userList(since: Int)
 }
 
 extension GitHub: TargetType {
@@ -39,8 +39,8 @@ extension GitHub: TargetType {
 
     var task: Task {
         switch self {
-        case .userList(let page):
-            return .requestParameters(parameters: ["page": page], encoding: URLEncoding.queryString)
+        case .userList(let since):
+            return .requestParameters(parameters: ["since": since], encoding: URLEncoding.queryString)
         }
     }
 
