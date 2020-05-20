@@ -64,7 +64,7 @@ class UserListCell: BaseTableViewCell {
     
     override func setupConstraints() {
         avatarImageView.snp.makeConstraints {
-            $0.top.bottom.trailing.equalToSuperview()
+            $0.top.bottom.leading.equalTo(0)
             $0.width.equalTo(avatarImageView.snp.height)
         }
         

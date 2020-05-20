@@ -23,19 +23,19 @@ class UserListViewModel {
         return userList.count
     }
     
-    func updateUserList(since: Int = 0) {
+    func updateUserList(completion: @escaping (NetworkResponse) -> Void ,since: Int = 0) {
         Network.shared.request(target: .userList(since: since), decoder: [User].self) { [weak self] response in
             switch response.result {
             case .success:
                 let result = response.json as! [User]
                 self?.userList = result
-                print(result)
             case .failure:
                 guard response.error == nil else {
                     print(response.error!)
                     return
                 }
             }
+            completion(response)
         }
     }
 }

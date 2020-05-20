@@ -27,6 +27,7 @@ class UserListViewController: BaseViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(UserListCell.classForCoder(), forCellReuseIdentifier: UserListCell.reuseIdentifier)
         return tableView
     }()
     
@@ -39,9 +40,12 @@ class UserListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.updateUserList()
-        reload()
-        print(viewModel.userList)
+        viewModel.updateUserList{ [weak self] response in
+            if response.result == .failure {
+                return
+            }
+            self?.reload()
+        }
     }
     
     //MARK: Methods
