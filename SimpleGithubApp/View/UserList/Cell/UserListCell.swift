@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class UserListCell: BaseTableViewCell {
     
@@ -37,6 +38,23 @@ class UserListCell: BaseTableViewCell {
         return label
     }()
     
+    var viewModel: UserListCellViewModel! {
+        didSet {
+            let imageURL = URL(string: viewModel.avatarURL)
+            avatarImageView.kf.setImage(with: imageURL)
+            idLabel.text = "\(viewModel.id)"
+            loginLabel.text = viewModel.login
+        }
+    }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //MARK: Methods
     override func setupUI() {
         [avatarImageView, idLabel, loginLabel].forEach {
@@ -48,6 +66,18 @@ class UserListCell: BaseTableViewCell {
         avatarImageView.snp.makeConstraints {
             $0.top.bottom.trailing.equalToSuperview()
             $0.width.equalTo(avatarImageView.snp.height)
+        }
+        
+        idLabel.snp.makeConstraints {
+            $0.trailing.equalTo(avatarImageView.snp.leading).offset(5)
+            $0.leading.equalToSuperview().offset(5)
+            $0.top.equalToSuperview().offset(20)
+        }
+        
+        loginLabel.snp.makeConstraints {
+            $0.top.equalTo(idLabel.snp.bottom).offset(10)
+            $0.trailing.equalTo(idLabel.snp.trailing)
+            $0.leading.equalTo(idLabel.snp.leading)
         }
     }
 }

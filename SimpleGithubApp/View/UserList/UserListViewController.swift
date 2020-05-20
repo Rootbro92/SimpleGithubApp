@@ -25,6 +25,8 @@ class UserListViewController: BaseViewController {
         let tableView = UITableView()
         tableView.estimatedRowHeight = UI.TableView.estimateRowHeight
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.delegate = self
+        tableView.dataSource = self
         return tableView
     }()
     
@@ -37,6 +39,9 @@ class UserListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.updateUserList()
+        reload()
+        print(viewModel.userList)
     }
     
     //MARK: Methods
@@ -48,6 +53,12 @@ class UserListViewController: BaseViewController {
     override func setupConstraints() {
         tableView.snp.makeConstraints {
             $0.top.bottom.leading.trailing.equalToSuperview()
+        }
+    }
+    
+    func reload() {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
         }
     }
 }
