@@ -32,6 +32,7 @@ class UserListViewModel {
             case .failure:
                 guard response.error == nil else {
                     print(response.error!)
+                    completion(response)
                     return
                 }
             }

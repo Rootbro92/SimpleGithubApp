@@ -13,4 +13,11 @@ class UserListCellViewModel {
     var id: Int = 0
     var avatarURL: String = ""
     var login: String = ""
+    
+
+    init(id: Int, avatarURL: String, login: String) {
+        self.id = id
+        self.avatarURL = avatarURL
+        self.login = login
+    }
 }

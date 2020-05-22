@@ -12,12 +12,12 @@ import UIKit
 extension UserListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(viewModel.numberOfRowsInSection())
         return viewModel.numberOfRowsInSection()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(UserListCell.self, for: indexPath)
+        cell.viewModel = UserListCellViewModel(id: viewModel.userList[indexPath.row].id, avatarURL: viewModel.userList[indexPath.row].avatarURL, login: viewModel.userList[indexPath.row].login)
         return cell
     }
 }

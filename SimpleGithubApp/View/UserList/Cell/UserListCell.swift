@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import SnapKit
-import Kingfisher
+
 
 class UserListCell: BaseTableViewCell {
     
@@ -40,12 +39,13 @@ class UserListCell: BaseTableViewCell {
     
     var viewModel: UserListCellViewModel! {
         didSet {
-            let imageURL = URL(string: viewModel.avatarURL)
-            avatarImageView.kf.setImage(with: imageURL)
+            avatarImageView.kf.setImage(with: URL(string: viewModel.avatarURL))
             idLabel.text = "\(viewModel.id)"
             loginLabel.text = viewModel.login
         }
     }
+    
+    //MARK: LifeCycle
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -56,6 +56,7 @@ class UserListCell: BaseTableViewCell {
     }
     
     //MARK: Methods
+    
     override func setupUI() {
         [avatarImageView, idLabel, loginLabel].forEach {
             addSubview($0)
