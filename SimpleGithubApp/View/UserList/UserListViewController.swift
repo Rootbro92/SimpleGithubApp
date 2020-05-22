@@ -21,7 +21,9 @@ class UserListViewController: BaseViewController {
     }
     
     //MARK: UI Property
+    
     private var refreshControl = UIRefreshControl()
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.estimatedRowHeight = UI.TableView.estimateRowHeight
@@ -34,12 +36,10 @@ class UserListViewController: BaseViewController {
         return tableView
     }()
     
-    // private var refreshControl = UIRefreshControl()
-    
     //MARK: Property
     
     let viewModel: UserListViewModel = UserListViewModel()
-    
+    private var pageNum = 1
     
     //MARK: Life Cycle
     
@@ -72,6 +72,13 @@ class UserListViewController: BaseViewController {
         }
     }
     
+    private func loadMoreData() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            guard let self = self else { return }
+            self.reload()
+        }
+    }
+    
     @objc func refresh() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
             self?.viewModel.userList.removeAll(keepingCapacity: true)
@@ -79,7 +86,6 @@ class UserListViewController: BaseViewController {
                 if response.result == .failure {
                     return
                 }
-                print("refresh")
                 self?.reload()
             }
         }

@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+//MARK: UserListTableView DataSource
+
 extension UserListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -21,6 +23,9 @@ extension UserListViewController: UITableViewDataSource {
         return cell
     }
 }
+
+//MARK: UserListTableView Delegate
+
 extension UserListViewController: UITableViewDelegate {
     
 }

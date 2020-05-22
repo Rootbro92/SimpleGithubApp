@@ -10,11 +10,15 @@ import Foundation
 
 class UserListCellViewModel {
     
+    //MARK: Property
+    
     var id: Int = 0
     var avatarURL: String = ""
     var login: String = ""
     
 
+    //MARK: Init
+    
     init(id: Int, avatarURL: String, login: String) {
         self.id = id
         self.avatarURL = avatarURL

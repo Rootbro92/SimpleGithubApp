@@ -17,13 +17,15 @@ class UserListViewModel {
     //MARK: Properties
     
     var userList: [User] = []
-    private var since: Int = 0
+    var since: Int = 0
+    
+    //MARK: Methods
     
     func numberOfRowsInSection() -> Int {
         return userList.count
     }
     
-    func updateUserList(completion: @escaping (NetworkResponse) -> Void ,since: Int = 0) {
+    func updateUserList(since: Int = 0, completion: @escaping (NetworkResponse) -> Void) {
         Network.shared.request(target: .userList(since: since), decoder: [User].self) { [weak self] response in
             switch response.result {
             case .success:
