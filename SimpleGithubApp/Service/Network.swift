@@ -24,15 +24,15 @@ struct NetworkResponse {
 }
 
 class Network {
-
+    
     static let shared = Network()
-
+    
     let provider = MoyaProvider<GitHub>()
-
+    
     private init() {
-
+        
     }
-
+    
     func request<T: Decodable>(target: GitHub, decoder: T.Type, completion: @escaping (NetworkResponse) -> Void) {
         provider.request(target) { result in
             switch result {

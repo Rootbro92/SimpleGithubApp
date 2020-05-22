@@ -14,6 +14,10 @@ class UserListCell: BaseTableViewCell {
     //MARK: Constant
     
     struct UI {
+        static let leadingMargin = 15
+        static let trailingMargin = 15
+        static let topMargin = 20
+        static let bottomMargin = -20
     }
     
     //MARK: UI Properties
@@ -27,12 +31,14 @@ class UserListCell: BaseTableViewCell {
     
     let idLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .left
         label.numberOfLines = 1
         return label
     }()
     
     let loginLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .left
         label.numberOfLines = 1
         return label
     }()
@@ -70,13 +76,13 @@ class UserListCell: BaseTableViewCell {
         }
         
         idLabel.snp.makeConstraints {
-            $0.trailing.equalTo(avatarImageView.snp.leading).offset(5)
-            $0.leading.equalToSuperview().offset(5)
-            $0.top.equalToSuperview().offset(20)
+            $0.leading.equalTo(avatarImageView.snp.trailing).offset(UI.leadingMargin)
+            $0.trailing.equalToSuperview().offset(UI.trailingMargin)
+            $0.top.equalToSuperview().offset(UI.topMargin)
         }
         
         loginLabel.snp.makeConstraints {
-            $0.top.equalTo(idLabel.snp.bottom).offset(10)
+            $0.bottom.equalToSuperview().offset(UI.bottomMargin)
             $0.trailing.equalTo(idLabel.snp.trailing)
             $0.leading.equalTo(idLabel.snp.leading)
         }

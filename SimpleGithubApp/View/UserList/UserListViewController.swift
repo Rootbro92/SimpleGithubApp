@@ -16,20 +16,25 @@ class UserListViewController: BaseViewController {
     struct UI {
         struct TableView {
             static let estimateRowHeight: CGFloat = 100
+            static let rowHeight: CGFloat = 100
         }
     }
     
     //MARK: UI Property
-    
+    private var refreshControl = UIRefreshControl()
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.estimatedRowHeight = UI.TableView.estimateRowHeight
-        tableView.rowHeight = UITableView.automaticDimension
+        tableView.rowHeight = UI.TableView.rowHeight
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UserListCell.classForCoder(), forCellReuseIdentifier: UserListCell.reuseIdentifier)
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         return tableView
     }()
+    
+    // private var refreshControl = UIRefreshControl()
     
     //MARK: Property
     
@@ -63,6 +68,20 @@ class UserListViewController: BaseViewController {
     func reload() {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
+            self?.tableView.refreshControl?.endRefreshing()
+        }
+    }
+    
+    @objc func refresh() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            self?.viewModel.userList.removeAll(keepingCapacity: true)
+            self?.viewModel.updateUserList{ [weak self] response in
+                if response.result == .failure {
+                    return
+                }
+                print("refresh")
+                self?.reload()
+            }
         }
     }
 }

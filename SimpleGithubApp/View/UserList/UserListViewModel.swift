@@ -28,7 +28,7 @@ class UserListViewModel {
             switch response.result {
             case .success:
                 let result = response.json as! [User]
-                self?.userList = result
+                self?.userList.append(contentsOf: result)
             case .failure:
                 guard response.error == nil else {
                     print(response.error!)
