@@ -71,7 +71,7 @@ class UserListViewController: BaseViewController {
         }
     }
     
-    private func loadMoreData() {
+    func loadMoreData() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
             guard let self = self else { return }
             self.viewModel.since = self.viewModel.userList.last?.id ?? 0

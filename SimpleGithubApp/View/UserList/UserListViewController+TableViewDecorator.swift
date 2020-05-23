@@ -27,5 +27,9 @@ extension UserListViewController: UITableViewDataSource {
 //MARK: UserListTableView Delegate
 
 extension UserListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == viewModel.userList.count - 10 {
+            loadMoreData()
+        }
+    }
 }
