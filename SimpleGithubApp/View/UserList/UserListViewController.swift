@@ -39,7 +39,6 @@ class UserListViewController: BaseViewController {
     //MARK: Property
     
     let viewModel: UserListViewModel = UserListViewModel()
-    private var pageNum = 1
     
     //MARK: Life Cycle
     
@@ -75,13 +74,20 @@ class UserListViewController: BaseViewController {
     private func loadMoreData() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
             guard let self = self else { return }
-            self.reload()
+            self.viewModel.since = self.viewModel.userList.last?.id ?? 0
+            self.viewModel.updateUserList{ [weak self] response in
+                if response.result == .failure {
+                    return
+                }
+                self?.reload()
+            }
         }
     }
     
     @objc func refresh() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
             self?.viewModel.userList.removeAll(keepingCapacity: true)
+            self?.viewModel.since = 0
             self?.viewModel.updateUserList{ [weak self] response in
                 if response.result == .failure {
                     return
