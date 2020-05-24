@@ -6,8 +6,6 @@
 //  Copyright © 2020 pgh. All rights reserved.
 //
 
-import UIKit
-
 class UserListViewModel {
     
     enum CellType: Int {

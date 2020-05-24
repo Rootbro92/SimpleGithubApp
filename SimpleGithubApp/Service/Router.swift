@@ -11,6 +11,7 @@ import Moya
 
 enum GitHub {
     case userList(since: Int)
+    case userInfo(login: String)
 }
 
 extension GitHub: TargetType {
@@ -20,12 +21,16 @@ extension GitHub: TargetType {
         switch self {
         case .userList:
             return "/users"
+        case .userInfo:
+            return "/users"
         }
     }
 
     var method: Moya.Method {
         switch self {
         case .userList:
+            return .get
+        case .userInfo:
             return .get
         }
     }
@@ -34,6 +39,8 @@ extension GitHub: TargetType {
         switch self {
         case .userList:
             return "test data".data(using: .utf8)!
+        case .userInfo:
+            return "test data".data(using: .utf8)!
         }
     }
 
@@ -41,6 +48,8 @@ extension GitHub: TargetType {
         switch self {
         case .userList(let since):
             return .requestParameters(parameters: ["since": since], encoding: URLEncoding.queryString)
+        case .userInfo(let login):
+            return .requestParameters(parameters: ["login": login], encoding: URLEncoding.queryString)
         }
     }
 
