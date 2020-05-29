@@ -25,7 +25,6 @@
 		844626AE245092B10091BA91 /* UIView+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844626AD245092B10091BA91 /* UIView+ReuseIdentifier.swift */; };
 		84CBF98B24799172000D5D7F /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBF98A24799172000D5D7F /* UserInfoViewController.swift */; };
 		84CBF98E24799302000D5D7F /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBF98D24799302000D5D7F /* UserInfoModel.swift */; };
-		84CBF991247FFDB3000D5D7F /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBF990247FFDB3000D5D7F /* FooterView.swift */; };
 		96937A8AA1A4718E00E6C9C5 /* Pods_SimpleGithubApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 851B42AAB9635F22FF9126E8 /* Pods_SimpleGithubApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +50,6 @@
 		844626AD245092B10091BA91 /* UIView+ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ReuseIdentifier.swift"; sourceTree = "<group>"; };
 		84CBF98A24799172000D5D7F /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		84CBF98D24799302000D5D7F /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
-		84CBF990247FFDB3000D5D7F /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		851B42AAB9635F22FF9126E8 /* Pods_SimpleGithubApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleGithubApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C59252ABC83A3F41AF4E575D /* Pods-SimpleGithubApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleGithubApp.debug.xcconfig"; path = "Target Support Files/Pods-SimpleGithubApp/Pods-SimpleGithubApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,7 +161,6 @@
 			children = (
 				8446269C244E0EA40091BA91 /* BaseViewController.swift */,
 				844626A3244F6CBC0091BA91 /* BaseTableViewCell.swift */,
-				84CBF990247FFDB3000D5D7F /* FooterView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -346,7 +343,6 @@
 				844626AE245092B10091BA91 /* UIView+ReuseIdentifier.swift in Sources */,
 				844626A8244F6FF60091BA91 /* UserListViewModel.swift in Sources */,
 				844626A6244F6F3E0091BA91 /* UserListViewController+TableViewDecorator.swift in Sources */,
-				84CBF991247FFDB3000D5D7F /* FooterView.swift in Sources */,
 				844626992448C0130091BA91 /* UserModel.swift in Sources */,
 				844626922448BD5D0091BA91 /* Router.swift in Sources */,
 				844626952448BF970091BA91 /* UserListViewController.swift in Sources */,
