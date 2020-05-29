@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8446267B24472EE30091BA91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446267A24472EE30091BA91 /* AppDelegate.swift */; };
-		8446268224472EE30091BA91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8446268024472EE30091BA91 /* Main.storyboard */; };
 		8446268424472EE40091BA91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8446268324472EE40091BA91 /* Assets.xcassets */; };
 		8446268724472EE40091BA91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8446268524472EE40091BA91 /* LaunchScreen.storyboard */; };
 		844626902448BD520091BA91 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446268F2448BD520091BA91 /* Network.swift */; };
@@ -32,7 +31,6 @@
 		5D452C9254CE546712856F01 /* Pods-SimpleGithubApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleGithubApp.release.xcconfig"; path = "Target Support Files/Pods-SimpleGithubApp/Pods-SimpleGithubApp.release.xcconfig"; sourceTree = "<group>"; };
 		8446267724472EE30091BA91 /* SimpleGithubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleGithubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8446267A24472EE30091BA91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8446268124472EE30091BA91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8446268324472EE40091BA91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8446268624472EE40091BA91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8446268824472EE40091BA91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 				844626972448C0020091BA91 /* Model */,
 				8446268E2448BD090091BA91 /* Service */,
 				844626932448BF450091BA91 /* View */,
-				8446268024472EE30091BA91 /* Main.storyboard */,
 				8446268324472EE40091BA91 /* Assets.xcassets */,
 				8446268524472EE40091BA91 /* LaunchScreen.storyboard */,
 				8446268824472EE40091BA91 /* Info.plist */,
@@ -285,7 +282,6 @@
 			files = (
 				8446268724472EE40091BA91 /* LaunchScreen.storyboard in Resources */,
 				8446268424472EE40091BA91 /* Assets.xcassets in Resources */,
-				8446268224472EE30091BA91 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,14 +355,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8446268024472EE30091BA91 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8446268124472EE30091BA91 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8446268524472EE40091BA91 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
